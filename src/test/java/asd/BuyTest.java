@@ -22,10 +22,9 @@ public class BuyTest {
 
         mainPage.open();
         mainPage.searchProduct("розетка");
-        searchResultPage.searchResult();
+        searchResultPage.clickFirstProduct();
         String expectedPrice = productPage.getPrice();
 
-                //Click "BUY"
         productPage.clickBuy();
 
         //Get price from cart

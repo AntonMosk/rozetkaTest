@@ -1,6 +1,5 @@
 package asd;
 
-import com.gargoylesoftware.htmlunit.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,7 +11,7 @@ public class SearchResultPage {
         this.driver = driver;
     }
 
-    public void searchResult() {
+    public void clickFirstProduct() {
         driver.findElement(searchResult).click();
     }
 }
