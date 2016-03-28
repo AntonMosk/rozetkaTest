@@ -6,10 +6,10 @@ import org.junit.Test;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.Cart;
-import java.MainPage;
-import java.ProductPage;
-import java.SearchResultPage;
+import asd.Cart;
+import asd.MainPage;
+import asd.ProductPage;
+import asd.SearchResultPage;
 import java.util.concurrent.TimeUnit;
 
 public class BuyTest {
