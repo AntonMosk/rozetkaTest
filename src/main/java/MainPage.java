@@ -1,4 +1,4 @@
-package asd;
+package java;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

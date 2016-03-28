@@ -1,4 +1,4 @@
-package asd;
+package java;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,4 +21,5 @@ public class ProductPage {
     public void clickBuy(){
         driver.findElement(buyButton).click();
     }
+
 }
