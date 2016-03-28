@@ -14,8 +14,8 @@ public class ProductPage {
         this.driver = driver;
     }
 
-    public String getPrice() {
-        return driver.findElement(priceLabel).getText();
+    public Integer getPrice() {
+        return Integer.parseInt(driver.findElement(priceLabel).getText());
     }
 
     public void clickBuy(){

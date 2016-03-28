@@ -11,10 +11,10 @@ public class BuyTest extends AbstractTest{
         mainPage.open();
         mainPage.searchProduct("розетка");
         searchResultPage.clickFirstProduct();
-        String expectedPrice = productPage.getPrice();
+        int expectedPrice = productPage.getPrice();
 
         productPage.clickBuy();
-        String priceInCart = cart.getPriceInCart();
+        int priceInCart = cart.getPriceInCart();
 
         Assert.assertEquals(expectedPrice, priceInCart);
     }
@@ -26,19 +26,14 @@ public class BuyTest extends AbstractTest{
         searchResultPage.clickFirstProduct();
         productPage.clickBuy();
 
-        String priceInCartOne = cart.getPriceInCart();
-        int priceInCartOneINT = Integer.parseInt(priceInCartOne.replaceAll(" ", ""));
-        int priceInCartTwoCheckINT = priceInCartOneINT * 2;
+        int priceInCartOne = cart.getPriceInCart();
+        int priceInCartTwoCheck = priceInCartOne * 2;
         cart.changeQuantitiesPlus();
-        Thread.sleep(10000);
-        String priceInCartTwo = cart.getPriceInCart();
-        int priceInCartTwoINT = Integer.parseInt(priceInCartTwo.replaceAll(" ", ""));
-        Assert.assertEquals(priceInCartTwoCheckINT, priceInCartTwoINT);
+        int priceInCartTwo = cart.getPriceInCart();
+        Assert.assertEquals(priceInCartTwoCheck, priceInCartTwo);
 
         cart.changeQuantitiesSendOne();
-        Thread.sleep(10000);
-        String priceInCartThree = cart.getPriceInCart();
-        int priceInCartThreeINT = Integer.parseInt(priceInCartThree.replaceAll(" ", ""));
-        Assert.assertEquals(priceInCartOneINT, priceInCartThreeINT);
+        int priceInCartThree = cart.getPriceInCart();
+        Assert.assertEquals(priceInCartOne, priceInCartThree);
     }
 }
