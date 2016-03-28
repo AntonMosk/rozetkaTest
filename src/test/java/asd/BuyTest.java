@@ -4,27 +4,10 @@ package asd;
 import org.junit.Assert;
 import org.junit.Test;
 
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-import asd.Cart;
-import asd.MainPage;
-import asd.ProductPage;
-import asd.SearchResultPage;
-import java.util.concurrent.TimeUnit;
-
-public class BuyTest {
-    private FirefoxDriver driver;
+public class BuyTest extends AbstractTest{
 
     @Test
     public void testSum() throws InterruptedException {
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-        MainPage mainPage = new MainPage(driver);
-        SearchResultPage searchResultPage = new SearchResultPage(driver);
-        ProductPage productPage = new ProductPage(driver);
-        Cart cart = new Cart(driver);
-
         mainPage.open();
         mainPage.searchProduct("розетка");
         searchResultPage.clickFirstProduct();
@@ -34,19 +17,10 @@ public class BuyTest {
         String priceInCart = cart.getPriceInCart();
 
         Assert.assertEquals(expectedPrice, priceInCart);
-
-        driver.close();
     }
+
     @Test
     public void testPrice() throws InterruptedException {
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-        MainPage mainPage = new MainPage(driver);
-        SearchResultPage searchResultPage = new SearchResultPage(driver);
-        ProductPage productPage = new ProductPage(driver);
-        Cart cart = new Cart(driver);
-
         mainPage.open();
         mainPage.searchProduct("3818036");
         searchResultPage.clickFirstProduct();
@@ -54,7 +28,7 @@ public class BuyTest {
 
         String priceInCartOne = cart.getPriceInCart();
         int priceInCartOneINT = Integer.parseInt(priceInCartOne.replaceAll(" ", ""));
-        int priceInCartTwoCheckINT = priceInCartOneINT *2;
+        int priceInCartTwoCheckINT = priceInCartOneINT * 2;
         cart.changeQuantitiesPlus();
         Thread.sleep(10000);
         String priceInCartTwo = cart.getPriceInCart();
@@ -66,6 +40,5 @@ public class BuyTest {
         String priceInCartThree = cart.getPriceInCart();
         int priceInCartThreeINT = Integer.parseInt(priceInCartThree.replaceAll(" ", ""));
         Assert.assertEquals(priceInCartOneINT, priceInCartThreeINT);
-        driver.close();
-        }
+    }
 }
