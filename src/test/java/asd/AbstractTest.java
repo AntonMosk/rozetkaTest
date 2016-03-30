@@ -14,7 +14,7 @@ public abstract class AbstractTest {
     protected Cart cart;
     protected RegistrationPage registrationPage;
     protected CabitetPage cabitetPage;
-    protected EmailPage emailPage;
+
 
     @Before
     public void preCondition(){
@@ -28,7 +28,6 @@ public abstract class AbstractTest {
         cart = new Cart(driver);
         registrationPage = new RegistrationPage(driver);
         cabitetPage = new CabitetPage(driver);
-        emailPage = new EmailPage(driver);
     }
     @After
     public void postCondition(){
