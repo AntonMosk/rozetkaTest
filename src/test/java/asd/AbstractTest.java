@@ -12,18 +12,24 @@ public abstract class AbstractTest {
     protected SearchResultPage searchResultPage;
     protected ProductPage productPage;
     protected Cart cart;
+    protected RegistrationPage registrationPage;
+    protected CabitetPage cabitetPage;
+    protected EmailPage emailPage;
 
     @Before
     public void preCondition(){
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+
         mainPage = new MainPage(driver);
         searchResultPage = new SearchResultPage(driver);
         productPage = new ProductPage(driver);
         cart = new Cart(driver);
+        registrationPage = new RegistrationPage(driver);
+        cabitetPage = new CabitetPage(driver);
+        emailPage = new EmailPage(driver);
     }
-
     @After
     public void postCondition(){
         driver.close();
