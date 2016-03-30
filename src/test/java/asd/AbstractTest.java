@@ -13,7 +13,7 @@ public abstract class AbstractTest {
     protected ProductPage productPage;
     protected Cart cart;
     protected RegistrationPage registrationPage;
-    protected CabitetPage cabitetPage;
+    protected CabinetPage cabinetPage;
 
 
     @Before
@@ -27,7 +27,7 @@ public abstract class AbstractTest {
         productPage = new ProductPage(driver);
         cart = new Cart(driver);
         registrationPage = new RegistrationPage(driver);
-        cabitetPage = new CabitetPage(driver);
+        cabinetPage = new CabinetPage(driver);
     }
     @After
     public void postCondition(){

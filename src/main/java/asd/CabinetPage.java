@@ -14,8 +14,8 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Created by tatsiak on 3/30/16.
  */
-public class CabitetPage {
-    public CabitetPage(WebDriver driver) {
+public class CabinetPage {
+    public CabinetPage(WebDriver driver) {
         this.driver = driver;
     }
 
