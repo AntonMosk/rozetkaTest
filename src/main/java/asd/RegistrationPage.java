@@ -21,11 +21,28 @@ public class RegistrationPage {
         Random r = new Random(System.currentTimeMillis() );
         return "ari" + ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000)) + "@mailinator.com";
     }
-    public void addRegistrationData() {
+    public void enterWrongName (){
+        driver.findElement(nameForm).click();
+        driver.findElement(nameForm).sendKeys("!@#$%^&*");
+    }
+    public void enterName (){
         driver.findElement(nameForm).click();
         driver.findElement(nameForm).sendKeys("Аристотель");
-        driver.findElement(emailForm).sendKeys(generateEmail());
-        driver.findElement(passwordForm).sendKeys("example9999");
+    }
+    public void enterWrongMail (){
+        driver.findElement(emailForm).click();
+        driver.findElement(emailForm).sendKeys("");
+    }
+    public void clickRegisterButton() {
         driver.findElement(registerButton).click();
     }
+    public void enterPassword () {
+        driver.findElement(passwordForm).click();
+        driver.findElement(passwordForm).sendKeys("example12345");
+    }
+    public Boolean isEmailRed (){
+        return  driver.findElement(By.name("email")).getCssValue("background-color").contains("rgba(255, 214, 214, 1)");
+    }
+
 }
+
