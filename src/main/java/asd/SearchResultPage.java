@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SearchResultPage {
     private WebDriver driver;
-    private By searchResult = By.className("g-i-list-title");
+    private By searchResult = By.cssSelector(".g-i-tile-i-box-desc a>img");
 
     public SearchResultPage(WebDriver driver) {
         this.driver = driver;

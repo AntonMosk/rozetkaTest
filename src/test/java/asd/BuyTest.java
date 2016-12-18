@@ -8,14 +8,17 @@ public class BuyTest extends AbstractTest{
 
     @Test
     public void testSum() throws InterruptedException {
-        mainPage.open();
+        //Given
+
         mainPage.searchProduct("розетка");
         searchResultPage.clickFirstProduct();
+//        GIven
         int expectedPrice = productPage.getPrice();
 
+//        When
         productPage.clickBuy();
         int priceInCart = cart.getPriceInCart();
-
+//Then
         Assert.assertEquals(expectedPrice, priceInCart);
     }
 

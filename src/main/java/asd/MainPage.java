@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
     private WebDriver driver;
-    private By searchProductField = By.cssSelector("div[name='header-search-input-text-wrap']>input");
+    private By searchProductField = By.cssSelector("input[name=text]");
     private By enterButton = By.name("signin");
     private By registerButton = By.cssSelector(".auth-f-signup > a");
     public MainPage(WebDriver driver){

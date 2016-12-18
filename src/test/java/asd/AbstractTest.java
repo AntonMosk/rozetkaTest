@@ -19,18 +19,7 @@ public abstract class AbstractTest {
 
     @Before
     public void preCondition(){
-        File geckdriver  = new File(this.getClass().getClassLoader().getResource("geckdriver").getFile());
-        System.setProperty("webdriver.gecko.driver",geckdriver.getAbsolutePath());
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-
-        mainPage = new MainPage(driver);
-        searchResultPage = new SearchResultPage(driver);
-        productPage = new ProductPage(driver);
-        cart = new Cart(driver);
-        registrationPage = new RegistrationPage(driver);
-        cabinetPage = new CabinetPage(driver);
     }
     @After
     public void postCondition(){
