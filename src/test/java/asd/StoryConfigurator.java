@@ -5,7 +5,10 @@ import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.embedder.StoryControls;
 import org.jbehave.core.i18n.LocalizedKeywords;
-import org.jbehave.core.io.*;
+import org.jbehave.core.io.CodeLocations;
+import org.jbehave.core.io.LoadFromClasspath;
+import org.jbehave.core.io.StoryFinder;
+import org.jbehave.core.io.UnderscoredCamelCaseResolver;
 import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.model.ExamplesTableFactory;
 import org.jbehave.core.parsers.RegexPrefixCapturingPatternParser;
@@ -23,10 +26,11 @@ import static java.util.Arrays.asList;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.*;
 
-public class Runner extends JUnitStories {
+public class StoryConfigurator extends JUnitStories {
+
     private final CrossReference xref = new CrossReference();
 
-    public Runner() {
+    public StoryConfigurator() {
         configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
                 .doIgnoreFailureInView(true).useThreads(2).useStoryTimeoutInSecs(60);
     }
@@ -65,5 +69,4 @@ public class Runner extends JUnitStories {
                 .useStepPatternParser(new RegexPrefixCapturingPatternParser("%"))
                 .useStepMonitor(xref.getStepMonitor());
     }
-
 }

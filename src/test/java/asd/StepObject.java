@@ -1,14 +1,14 @@
-package asd.stepObjects;
+package asd;
 
-import asd.*;
 import org.jbehave.core.annotations.BeforeScenario;
 import org.jbehave.core.annotations.Given;
+import org.jbehave.core.steps.Steps;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Steps {
+public class StepObject extends Steps {
     protected FirefoxDriver driver;
     protected MainPage mainPage;
     protected SearchResultPage searchResultPage;
