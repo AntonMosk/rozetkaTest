@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractTest {
@@ -18,6 +19,8 @@ public abstract class AbstractTest {
 
     @Before
     public void preCondition(){
+        File geckdriver  = new File(this.getClass().getClassLoader().getResource("geckdriver").getFile());
+        System.setProperty("webdriver.gecko.driver",geckdriver.getAbsolutePath());
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
